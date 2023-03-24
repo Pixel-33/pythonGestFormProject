@@ -17,7 +17,7 @@ def getResult(df):
     return result
 
 
-def buildDataFrame(ma_list):
+def buildDataFrame(my_list):
     # Construction d'un DataFrame avec 4 colonnes
     #   'Data'              -> liste des nombres aléatoires
     #   'Result'            -> résultat produit par le programme (Geste, Forme, Gestform, sinon n)
@@ -25,7 +25,7 @@ def buildDataFrame(ma_list):
     #   'Divisible_by_5'    -> boolean pour dire si divisible par 5
 
     my_columns = ['Data']
-    df = pd.DataFrame(ma_list, columns=my_columns)
+    df = pd.DataFrame(my_list, columns=my_columns)
     df['Result'] = np.NAN
     df['Divisible_by_3'] = df['Data'] % 3 == 0
     df['Divisible_by_5'] = df['Data'] % 5 == 0
@@ -37,5 +37,6 @@ def buildDataFrame(ma_list):
 
 
 def printDataFrame(df):
+    # Affichage du DataFrame dans le terminal
     print(tabulate(df, headers='keys', tablefmt='pretty'))
 
